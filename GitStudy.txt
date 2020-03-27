@@ -56,6 +56,32 @@
 		git push -u origin master//第一次推送使用-u 由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
 		git push origin master把本地master分支的最新修改推送至GitHub，现在，你就拥有了真正的分布式版本库！
 	3.2 从远程库克隆
+		登陆GitHub，创建一个新的仓库，名字叫gitskills 勾选Initialize this repository with a README
+		git clone git@github.com:498511842/gitskills.git//git clone克隆一个本地库
+		//注意把Git库的地址换成你自己的，然后进入gitskills目录看看，已经有README.md文件了
+4.分支管理
+	看廖雪峰的说法
+	4.1创建与合并分支
+		git checkout -b dev//首先，我们创建dev分支，然后切换到dev分支
+		//git checkout命令加上-b参数表示创建并切换，相当于以下两条命令
+		git branch dev
+		git checkout dev
+		//然后，用git branch命令查看当前分支
+		git branch//git branch命令会列出所有分支，当前分支前面会标一个*号
+		//然后提交 add commit
+		//现在，dev分支的工作完成，我们就可以切换回master分支
+		git checkout master 
+		//我们把dev分支的工作成果合并到master分支上
+		git merge dev
+		git branch -d dev//合并完成后，就可以放心地删除dev分支了
+		git switch -c dev//创建并切换到新的dev分支，可以使用
+		git switch master//直接切换到已有的master分支
+		查看分支  			git branch
+		创建分支  			git branch <name>
+		切换分支  			git checkout <name>或 git switch <name>
+		创建and切换分支  	git checkout -b <name>或 git switch -c <name>
+		合并分支到当前分支  git merge <name>
+		删除分支  			git branch -d <name>
 
 
 
