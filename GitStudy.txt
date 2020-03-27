@@ -123,8 +123,33 @@
 		//如果标签已经推送到远程，要删除远程标签就麻烦一点，先从本地删除git tag -d v0.9
 		//然后，从远程删除。删除命令也是push，但是格式如下git push origin :refs/tags/v0.9
 6.使用GitHub
-	
-
+7.使用Gitee
+	//使用Gitee和使用GitHub类似，我们在Gitee上注册账号并登录后，需要先上传自己的SSH公钥。选择右上角用户头像 -> 菜单“修改资料”，然后选择“SSH公钥”，填写一个便于识别的标题，然后把用户主目录下的.ssh/id_rsa.pub文件的内容粘贴进去
+	git remote add origin git@gitee.com:liaoxuefeng/learngit.git//在本地库上使用命令git remote add把它和Gitee的远程库关联
+	git remote -v//git remote -v查看远程库信息
+	git remote rm origin//删除已有的GitHub远程库origin
+	git remote add github git@github.com:michaelliao/learngit.git//先关联GitHub的远程库
+	git remote add gitee git@gitee.com:liaoxuefeng/learngit.git//再关联Gitee的远程库
+	如果要推送到GitHub，使用命令git push github master
+	如果要推送到Gitee，使用命令git push gitee master
+8.自定义Git
+	git config --global color.ui true//让Git显示颜色，会让命令输出看起来更醒目
+	Git 全局设置
+	git config --global user.name "username"
+	git config --global user.email "username@qq.com"
+	创建Git仓库
+	mkdir MyPython
+	cd MyPython
+	git init
+	touch README.md
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin https://gitee.com/PanPlan/MyPython.git
+	git push -u origin master
+	已有仓库？
+	cd existing_git_repo
+	git remote add origin https://gitee.com/PanPlan/MyPython.git
+	git push -u origin master
 
 
 
