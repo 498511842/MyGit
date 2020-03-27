@@ -61,7 +61,7 @@
 		//注意把Git库的地址换成你自己的，然后进入gitskills目录看看，已经有README.md文件了
 4.分支管理
 	看廖雪峰的说法
-	4.1创建与合并分支
+	4.1 创建与合并分支
 		git checkout -b dev//首先，我们创建dev分支，然后切换到dev分支
 		//git checkout命令加上-b参数表示创建并切换，相当于以下两条命令
 		git branch dev
@@ -82,7 +82,10 @@
 		创建and切换分支  	git checkout -b <name>或 git switch -c <name>
 		合并分支到当前分支  git merge <name>
 		删除分支  			git branch -d <name>
-
+	4.2 解决冲突
+		用git log --graph命令可以看到分支合并图
+	4.3 分支管理策略
+		
 
 
 
