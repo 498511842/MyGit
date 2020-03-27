@@ -85,6 +85,9 @@
 	4.2 解决冲突
 		用git log --graph命令可以看到分支合并图
 	4.3 分支管理策略
+		git merge --no-ff -m "merge with no-ff" dev//合并dev分支，请注意--no-ff参数，表示禁用Fast forward
+		git log --graph --pretty=oneline --abbrev-commit//用git log看看分支历史
+	4.4 BUG分支
 		
 
 
