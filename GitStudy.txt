@@ -33,5 +33,44 @@
 	2.3 管理修改
 		git diff HEAD -- readme.txt//命令可以查看工作区和版本库里面最新版本的区别
 		每次修改，如果不用git add到暂存区，那就不会加入到commit中。
-		聚体去自己看
+		具体去自己看
+	2.4 撤销修改
+		git checkout -- readme.txt//git checkout -- file可以丢弃工作区的修改
+		git reset HEAD readme.txt//git reset HEAD <file>可以把暂存区的修改撤销掉（unstage），重新放回工作区
+	2.5 删除文件
+		rm test.txt//通常直接在文件管理器中把没用的文件删了，或者用rm命令删了
+		git rm test.txt//确实要从版本库中删除该文件，那就用命令git rm删掉，并且git commit
+		//先手动删除文件，然后使用git rm <file>和git add<file>效果是一样的
+		git checkout -- test.txt//删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本
+3.远程仓库
+	首先创建SSH Key
+	ssh-keygen -t rsa -C "498511842@qq.com"//需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可
+	//可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人
+	//然后登陆GitHub 设置SSH Keys然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容
+	//点“Add Key”，你就应该看到已经添加的Key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
